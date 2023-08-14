@@ -3,9 +3,17 @@ import { currentUser } from "@clerk/nextjs";
 
 async function Page() {
   const user = await currentUser();
-  const userData={
-    id:''
-  }
+
+  const userInfo = {};
+  //combining clerk user data and database data
+  // const userData = {
+  //   id: user?.id,
+  //   objectId: "",
+  //   username: userInfo?.username || user?.username,
+  //   name: userInfo?.name || user?.firstName || "",
+  //   bio: userInfo?.bio || "",
+  //   image: userInfo?.image || user?.imageUrl,
+  // };
   return (
     <main className="mx-auto flex max-w-3xl flex-col justify-start px-10 py-20">
       <h1 className="head-text">Onboarding</h1>
@@ -13,7 +21,7 @@ async function Page() {
         Complete Your Profille Now to use Threads
       </p>
       <section className="mt-9 bg-dark-2 p-10">
-        <AccountProfile />
+        {/* <AccountProfile user={userData} btnTitle="Continue" /> */}
       </section>
     </main>
   );
